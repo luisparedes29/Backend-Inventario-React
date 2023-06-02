@@ -1,0 +1,32 @@
+[
+        {
+            "nombre": "Escamas de dragón",
+            "descripcion": "Escamas duras y resistentes recolectadas de un dragón",
+            "cantidadDisponible": 20
+        },
+        {
+            "nombre": "Ojo de tritón",
+            "descripcion": "Un ojo viscoso y brillante de un tritón",
+            "cantidadDisponible": 20
+        },
+        {
+            "nombre": "Raíz de valeriana",
+            "descripcion": "Raíz herbácea con propiedades calmantes",
+            "cantidadDisponible": 20
+        },
+        {
+            "nombre": "Ala de murciélago",
+            "descripcion": "Ala membranosa de un murciélago nocturno",
+            "cantidadDisponible": 20
+        },
+        {
+            "nombre": "Sangre de unicornio",
+            "descripcion": "Sangre pura y mágica de un unicornio",
+            "cantidadDisponible": 20
+        },
+        {
+            "nombre": "Hueso de serpiente",
+            "descripcion": "Fragmento óseo de una serpiente venenosa",
+            "cantidadDisponible": 20
+        }
+    ]

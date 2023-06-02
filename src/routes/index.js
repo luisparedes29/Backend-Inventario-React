@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getPociones, getIngredientes, setPocion, editPocion, deletePocion, editIngredientes} = require('./controllers/controllers')
+const {imagenController}= require('./controllers/controllerImagen')
 
 /* Ruta obtener pociones */
 router.get('/pociones',getPociones);
@@ -8,6 +9,10 @@ router.get('/pociones',getPociones);
 //ruta obtener ingredientes
 
 router.get('/ingredientes', getIngredientes);
+
+//ruta interna para crear ingredientes iniciales
+
+router.post('/editarIngredientes', editIngredientes);
 
 //Ruta guardar nueva pocion
 
@@ -21,6 +26,13 @@ router.put('/editarPocion/:id', editPocion)
 
 router.delete('/eliminarPocion/:id',deletePocion)
 
+//ruta Cargar Imagen de la pocion en cloudinary y BD
+
+router.post('/upload/:id', imagenController.cargarImagen);
+
+//Ruta obtener link de la imagen
+
+router.post('/getImage/:id', imagenController.getImagen);
 
 
 module.exports = router;
