@@ -30,6 +30,12 @@ const setPocion = async (req, res) => {
             ingredientesUtilizados,
             cantidadDisponible,
         } = req.body;
+        console.log(req.body)
+
+
+        if (!ingredientesUtilizados) {
+            return res.status(400).json({ mensaje: "Los ingredientes no están definidos" });
+        }
 
         const ingredientesPromises = ingredientesUtilizados.map((ingrediente) =>
             ingredientes.findOne({ where: { nombre: ingrediente } })
@@ -65,7 +71,8 @@ const setPocion = async (req, res) => {
         }
         res.status(200).json('mensaje:Pocion guardada con exito');
     } catch (error) {
-        res.status(500).json(`mensaje:${error}`);
+        console.log(error); // Agregar esta línea para imprimir el error en la consola
+        res.status(500).json({ mensaje: "Ocurrió un error en el servidor" });
     }
 };
 //editar una pocion

@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const upload = multer();
 const { getPociones, getIngredientes, setPocion, editPocion, deletePocion, editIngredientes} = require('./controllers/controllers')
 const {imagenController}= require('./controllers/controllerImagen')
 
