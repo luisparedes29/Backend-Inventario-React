@@ -30,7 +30,7 @@ router.delete('/eliminarPocion/:id',deletePocion)
 
 //ruta Cargar Imagen de la pocion en cloudinary y BD
 
-router.post('/upload/:id', imagenController.cargarImagen);
+router.post('/upload', imagenController.cargarImagen);
 
 //Ruta obtener link de la imagen
 

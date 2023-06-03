@@ -47,7 +47,7 @@ const cargarImagen = (req, res) => {
                     { imagenPocion: `${response.secure_url}` },
                     {
                         where: {
-                            id: req.params.id,
+                            nombre: req.body.nombre,
                         },
                     }
                 );
