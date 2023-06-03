@@ -69,7 +69,7 @@ const setPocion = async (req, res) => {
                 ingrediente.cantidadDisponible - cantidadDisponible;
             await ingrediente.update({ cantidadDisponible: nuevaCantidad });
         }
-        res.status(200).json('mensaje:Pocion guardada con exito');
+        res.status(200).json(nuevaPocion);
     } catch (error) {
         console.log(error); // Agregar esta línea para imprimir el error en la consola
         res.status(500).json({ mensaje: "Ocurrió un error en el servidor" });

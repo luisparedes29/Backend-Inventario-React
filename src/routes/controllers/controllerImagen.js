@@ -52,10 +52,12 @@ const cargarImagen = (req, res) => {
                     }
                 );
             } else {
-                res.status(400).json({ error: 'No se envió ningún archivo' });
+                console.log("todo bien")
+                // res.status(400).json({ error: 'No se envió ningún archivo' });
             }
         } catch {
-            res.status(500).json({ error: 'Internal Server Error' });
+            console.error(err)
+            // res.status(500).json({ error: 'Internal Server Error' });
         }
     });
 };
