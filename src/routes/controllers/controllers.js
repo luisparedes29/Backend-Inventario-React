@@ -202,6 +202,9 @@ const deletePocion = async (req, res) => {
 // funcion para crear un inventario de ingredientes al iniciar
 const guardarIngredientesEnBD = async (ingredientesIniciales) => {
     try {
+        let datosIniciales
+        ingredientes.findAll().then((data) => datosIniciales=data);
+        if(datosIniciales) return console.log("Ya hay datos")
         for (const ingrediente of ingredientesIniciales) {
             await ingredientes.create(ingrediente);
         }
@@ -216,18 +219,20 @@ const guardarIngredientesEnBD = async (ingredientesIniciales) => {
 };
 
 //ruta para accionar los ingredientes al iniciar
-const editIngredientes = async (req, res) => {
+const editIngredientes = async () => {
     try {
         const filePath = path.join(__dirname, 'ingredientes.json');
         const fileData = fs.readFileSync(filePath, 'utf-8');
         const ingredientesIniciales = JSON.parse(fileData);
-        guardarIngredientesEnBD(ingredientesIniciales).then(() =>
-            res
-                .status(200)
-                .json('mensaje: Ingredientes guardados en la base de datos')
-        );
+        guardarIngredientesEnBD(ingredientesIniciales)
+        //     res
+        //         .status(200)
+        //         .json('mensaje: Ingredientes guardados en la base de datos')
+        // );
+        console.log("Ingredientes Iniciales creados")
     } catch (error) {
-        res.status(500).json(`mensaje:${error}`);
+        console.log("Hubo un error ",error)
+       // res.status(500).json(`mensaje:${error}`);
     }
 };
 

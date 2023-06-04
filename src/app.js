@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config()
 require('./conexionDB');
+const  { editIngredientes }= require('./routes/controllers/controllers')
 var indexRouter = require('./routes/index');
+editIngredientes()
 
 var app = express();
 
